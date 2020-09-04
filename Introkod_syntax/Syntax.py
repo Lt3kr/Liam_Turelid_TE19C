@@ -8,5 +8,6 @@ print(f"ditt namn är {name}")
 
 side = float(input("Ange kvadratens sida: "))
 area = side**2
+omkrets = side*4
 
-print(f"arean av kvadraten är {area} a.e.")
+print(f"arean av kvadraten är {area} a.e. och omkretsen är {omkrets} l.e")
