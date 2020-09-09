@@ -25,3 +25,5 @@ if (f >= Mk): {
 
 else: 
     print(f" det kostar dig {f} kr att åka så mycket")
+
+#såg inte uppgifterna innan
