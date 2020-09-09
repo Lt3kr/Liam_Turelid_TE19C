@@ -6,8 +6,11 @@ body {
 }
 
 .button_1 {
-    color: black;
-    background-color: blue;
+    padding: 10px 40px;
+    margin: 20px;
+    border: round;
+    color: white;
+    background-color:purple;
     text-align: center;
     font-size: 28px;
     transition: all 0.5s;
@@ -22,20 +25,26 @@ body {
 }
 
 .button_1 :hover span {
-    padding-right: 25px;
+    padding-left: 40px;
 }
 
 .button_1 span:after {
-content: '>>';
-position: relative;
+content: '<<';
+position: absolute;
 opacity: 0;
 top: 0;
-right: -20px;
+left: 30px;
 transition: 0.5s;
 }
 
 
 .button_1:hover span:after {
     opacity: 1;
-    right: 0;
+    left: -35px;
+}
+
+h1:hover{
+    transition: 0.5s;
+    font-size: 300%;
+    cursor: pointer;
 }
