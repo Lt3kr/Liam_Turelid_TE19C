@@ -9,8 +9,8 @@ body {
     padding: 10px 40px;
     margin: 20px;
     border: round;
-    color: white;
-    background-color:purple;
+    color: black;
+    background-color:lightblue;
     text-align: center;
     font-size: 28px;
     transition: all 0.5s;
@@ -25,22 +25,22 @@ body {
 }
 
 .button_1 :hover span {
-    padding-left: 20px;
+    padding-left: 40px;
 }
 
 .button_1 span:after {
-content: '<<';
+content: '<< ';
 position: absolute;
 opacity: 0;
 top: 0;
-left: 20px;
+left: 30px;
 transition: 0.5s;
 }
 
 
 .button_1:hover span:after {
     opacity: 1;
-    left: -30px;
+    left: -35px;
 }
 
 h2 {
