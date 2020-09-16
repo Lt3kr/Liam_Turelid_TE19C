@@ -45,7 +45,7 @@ body {
     left: 0;
   }
 
-h2 {
+.h2 {
     text-decoration: none;
     font-size: 300%;
     transition: 0.75s;
@@ -53,11 +53,17 @@ h2 {
     cursor: pointer;
     position: relative;
 }
-h2:hover {
+.h2:hover {
     font-size: 375%;
 }
 
 h3 {
     color: white;
     font-size: 125%;
+}
+
+.middle_text {
+  text-align: center;
+  font-size: 200%;
+  color: black;
 }
