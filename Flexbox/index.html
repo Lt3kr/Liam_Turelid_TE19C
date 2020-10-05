@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        /* Lådan som vi lägger allt i*/
+        .container {
+            display: flex;
+        }
+        /* En sak som ligger i lådan*/
+        .item {
+            /* Ser till att sakerna i lådan expanderar*/
+            flex-grow: 1;
+            /* Höjden på lådan*/
+            height: 200px;
+            
+            /*F ancy styles */
+            border-radius: 3px;
+            background-color: #A2CBFA;
+            border: 1px solid #4390E1;
+            box-sizing: border-box;
+            box-shadow: 0 36px 36px rgba(0, 0, 0, 0.05), 0 36px 36px rgba(0, 0, 0, 0.05), 0 36px 36px rgba(0, 0, 0, 0.05), 0 36px 36px rgba(0, 0, 0, 0.05);
+        }
+        /* Mellanrum mellan sakerna*/
+        .item + .item {
+            margin-left: 1%;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item"><h1>hjalpfjwoqijfiwuifrhejq vruequhrqebhrqeygfyreqgvfyubvfewuvhreuqvr</h1></div>
+        <div class="item"><h1>hkalp</h1></div>
+        <div class="item"><h1>troligt</h1></div>
+    </div>
+</body>
+</html>
