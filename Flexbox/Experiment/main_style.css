@@ -3,13 +3,32 @@
     flex-wrap: wrap;
     justify-content: space-between;
 }
-¨
-.nav_header{
-    flex: 0 32%;
+
+
+
+.item{
+    flex-grow: 1;
     height: 100px;
     margin-bottom: 2%;
+    background-color: black;
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    border:7px solid brown;
+    padding-bottom:2px;
+    padding-top: 70px;
+    text-size-adjust: 200%;
 }
 
-.rubrik {
-    width: 100%;
+.header{
+    text-align: center;
+    padding: 10px;
+    background-color: blue;
+    margin: 5px;
+    height: 50px;
+    border: 2px solid brown;
+}
+
+.cool_font{
+    font-family: Brush Script MT;
 }

@@ -1,0 +1,27 @@
+body{
+    background-image: url(https://cdn11.bigcommerce.com/s-ikl27/images/stencil/1280x1280/products/17828/436067/Gibson-SG-Angus-Young-Thunderstruck-Cherry-VOS-1__08575.1599455460.jpg?c=3);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    text-align: center;
+    padding: 5px;
+    background-color: rgb(75, 75, 75);
+    margin: 2px;
+    height: 75px;
+    border: 2px solid rgb(94, 0, 0);
+    position: absolute;
+    right: 30px;
+    width: 300px
+}
+
+.cool_font{
+    font-family: Brush Script MT;
+}
