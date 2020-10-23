@@ -21,5 +21,5 @@ for i in range(10):
 print(x_värde, y_värde)
 
 circle = plt.Circle((0.0), 1, color='r')
-plt.plot(x_värde, y_värde)
+plt.plot(x_värde, y_värde, '*')
 plt.show()
