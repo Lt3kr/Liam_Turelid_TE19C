@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 x = rnd.uniform(-1, 1)
 y = rnd.uniform(-1, 1)
 
+cricle = plt.Circle((0,0), radius=1, color="red")
+ax = plt.gca()
 avståndet = x**2 + y**2
 t=0
 
@@ -20,6 +22,6 @@ for i in range(10):
 
 print(x_värde, y_värde)
 
-circle = plt.Circle((0.0), 1, color='r')
+ax.add_patch(cricle)
 plt.plot(x_värde, y_värde, '*')
 plt.show()
