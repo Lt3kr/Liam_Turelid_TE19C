@@ -6,6 +6,7 @@ x = rnd.uniform(-1, 1)
 y = rnd.uniform(-1, 1)
 
 cricle = plt.Circle((0,0), radius=1, color="red")
+rectangle = plt.Rectangle((-1,-1), width=2, height=2, color="blue")
 ax = plt.gca()
 avståndet = x**2 + y**2
 t=0
@@ -22,6 +23,9 @@ for i in range(10):
 
 print(x_värde, y_värde)
 
+ax.add_patch(rectangle)
 ax.add_patch(cricle)
 plt.plot(x_värde, y_värde, '*')
 plt.show()
+
+#jag vet inte ifall det här är svaret du söker men jag märker med olika radier på circeln så är det alltid 4 punkter inuti circlen.
