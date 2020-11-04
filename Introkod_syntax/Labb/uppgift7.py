@@ -28,4 +28,4 @@ ax.add_patch(cricle)
 plt.plot(x_värde, y_värde, '*')
 plt.show()
 
-#jag vet inte ifall det här är svaret du söker men jag märker med olika radier på circeln så är det alltid 4 punkter inuti circlen.
+#uppgift H: jag vet inte ifall det här är svaret du söker men jag märker med olika radier på circeln så är sanolikheten att det är endast en viss mängd med punkter i cirkel t.ex så hade 0.5 radien nästan alltid 2 punkter.

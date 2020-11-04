@@ -1,11 +1,12 @@
 import math
-import random
+import random as rnd
 
-x = random.uniform(-1.0, 1.0)
-y = random.uniform(-1.0, 1.0)
+z = rnd.randint(1, 100)
 
-avståndet = x**2 + y**2
+for i in range(z):
+    x = rnd.uniform(-1.0, 1.0)
+    y = rnd.uniform(-1.0, 1.0)
 
-print(x)
-print(y)
-print(math.sqrt(avståndet))
+
+    print(x)
+    print(y)
