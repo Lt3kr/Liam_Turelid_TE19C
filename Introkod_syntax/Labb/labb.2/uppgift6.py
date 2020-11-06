@@ -7,9 +7,9 @@ x = Start
 
 
 if Start - Stop >= 0:
-    print("du kan inte börja på ett tal större än slutet")
+    print("du kan inte börja på ett tal större än slutet") #fel hantering där man inte kan ha ett startvädre mindre än sluvärdet
 elif Start < 0:
-    print("Du får inte starta på ett negativt tal")
+    print("Du får inte starta på ett negativt tal") #fel hantering som kollar ifall start  värdet är mindre än 0 och säger att det inte kan vara det
 else:
     for i in range(Start, Stop + 1):
         if x % Multipel_birr == 0 and x % Multipel_burr == 0:
