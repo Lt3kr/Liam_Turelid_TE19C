@@ -11,13 +11,19 @@ body{
     justify-content: space-around;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+    padding: 1px;
+}
+
 .header {
-    flex: 0 24%;
-    height: 100px;
+    flex: 0 10%;
+    height: 40px;
     text-align: center;
     margin-bottom: 4%;
     background-color: indigo;
-    border: 10px, solid, green;
+    border-radius: 10px;
 }
 
 .container2 {
@@ -30,12 +36,14 @@ body{
     width: 500px;
     height:80px;
     margin-bottom: 5%;
-    background-color: red;
+    background-color: darkred;
     text-align: center;
+    border-radius: 15px;
 }
 
 .item {
-    width: 23%;
+    height: 300px;
+    width: 300px;
     padding-bottom: 10%;
     margin-bottom: 2%;
     position: relative;
@@ -46,6 +54,14 @@ footer {
     bottom: 0;
     height: 20px;
     width: 100%;
-    background-color: lemonchiffon;
+    background-color: grey;
     text-align: center;
+}
+
+.item2 {
+    height: 300px;
+    width: 32%;
+    padding-bottom: 5%;
+    margin-bottom: 2%;
+    position: relative;
 }
