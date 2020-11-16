@@ -1,23 +1,23 @@
-body{
+body{ /*gör så att bakgrunden till body alltid är en bild som sträcker sig över hela sidan inte repeterar sig och är alltid oförändrad*/
     background-image: url(https://cdn11.bigcommerce.com/s-ikl27/images/stencil/1280x1280/products/17828/436067/Gibson-SG-Angus-Young-Thunderstruck-Cherry-VOS-1__08575.1599455460.jpg?c=3);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
-.container {
+.container { /*gör containern som flexboxen ska vara i den har egenskaperna att dras över hela skärmen med hjälp av wrap använder sig av felxbox genom display och skapar mellanrum*/
     flex-wrap: wrap;
     display: flex;
     justify-content: space-around;
 }
 
-a {
+a { /*detta är för att alla anchors inte ska ha ett sträck under sig då jag  finner det störande samt att det ska vara vit text med 1px mellanrum*/
     text-decoration: none;
     color: white;
     padding: 1px;
 }
 
-.header {
+.header { /*gör headern som sitter längst upp och den ser till att de endast tar 10% i width har 40px i höjd samt att texten kommer i mitten av boxen, har ett mellanrum underst på 4% och har bakrundsfärden indigo med en 10px med "rundning"*/
     flex: 0 10%;
     height: 40px;
     text-align: center;
@@ -26,13 +26,13 @@ a {
     border-radius: 10px;
 }
 
-.container2 {
+.container2 { /*ser till att det är flex och att alla saker i den centreras samt att dem alla växer som kolummer*/
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-.rubrik {
+.rubrik { /*har en bestämd höjd på 80px och bestämd bredd på 500px ett mellanrum vid botten på 5% har bgc på mörkröd ser till att all text kommer i mitten och har en "rundhet" på 15px*/
     width: 500px;
     height:80px;
     margin-bottom: 5%;
@@ -41,7 +41,7 @@ a {
     border-radius: 15px;
 }
 
-.item {
+.item { /*skapar bestämd höjd och bredd på 300px samt mellanrum på 10% överst och 2% under och ser till att positionen är relativ med andra items*/
     height: 300px;
     width: 300px;
     padding-bottom: 10%;
@@ -49,7 +49,7 @@ a {
     position: relative;
 }
 
-footer {
+footer { /*ser till att positionen inte ändras och att den är på botten sedan så har den en höjd på 20px och bred på hela skärmen där med 100% samt bgc på grå och med text i mitten*/
     position: fixed;
     bottom: 0;
     height: 20px;
@@ -58,7 +58,7 @@ footer {
     text-align: center;
 }
 
-.item2 {
+.item2 { /*är i stort sätt samma som item förutom att den har endast bestämd höjd på 300px medans bredden är alltid 32% av skärmens bredd har även mellanrum uppåt med 5% och nedåt med 2% postitionen är även relativ till andra item2*/
     height: 300px;
     width: 32%;
     padding-bottom: 5%;
