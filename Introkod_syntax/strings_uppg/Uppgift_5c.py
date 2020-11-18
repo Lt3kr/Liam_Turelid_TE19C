@@ -35,3 +35,5 @@ elif fråga == "dekryptera":
         RiktigaLösen += alfabetet[Position]
 
     print(RiktigaLösen[::-1])
+else:
+    print("Endast kryptera eller dekrytera")
