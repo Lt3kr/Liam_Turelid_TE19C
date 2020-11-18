@@ -1,3 +1,3 @@
-y = input("Ge mig ditt namn!: ")
+Mening = input("Ge mig ditt namn!: ")
 
-print(f"längden på ditt namn är {y.__len__()}")
+print(f"längden på ditt namn är {Mening.__len__()}")
