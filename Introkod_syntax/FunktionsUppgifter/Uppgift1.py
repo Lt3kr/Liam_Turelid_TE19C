@@ -1,3 +1,6 @@
+# Hela uppgift 1
+
+
 a = int(input("Skriv vad du vill ha som a: "))
 n = int(input("Skriv vad du vill ha som n: "))
 an = int(input("Skriv vad du vill ha som slut a: "))
