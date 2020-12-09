@@ -6,4 +6,3 @@
 pengar = int(input("Ge mig pengarna"))
 
 def antalTusenlappar(pengar):
-    
