@@ -1,0 +1,4 @@
+
+
+pokeindex = {}
+
