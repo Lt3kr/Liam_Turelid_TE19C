@@ -1,3 +1,7 @@
-x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+import numpy as np 
+
+x = np.arange(10,110,10)
+y = x * 10
 
 print(x)
+print(y) 
