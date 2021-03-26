@@ -3,30 +3,60 @@
 <head>
     <script src="https://koda.nu/simple.js">
 
-        var Zombie = {x: random(totalHeight)
-                      y: random(totalWidth)
-                      speed: random(1,5)};
-         
+        var Zombie = [];
+        var antalZombie = 0;
+        var pistolSkott = [];
+        
+        pistolSkot.push(circle(mouse.x, mouse.y, 10, "blue"));
+
+        while (antalZombie < 10){
+          Zombie.push({x: random(totalHeight),
+           y: random(totalWidth),
+           speed: random(1,5)});
+           antalZombie += 1;
+          }
+
+        var vapen = {
+          x: mouse.x,
+          y: mouse.y
+        }
+        
          function update(){
-           clearScreen();
+
+          clearScreen();
+
+          picture(vapen.x, vapen.y, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVQJtUu9sg-OK1bsqomtd1rg6a-kjHyojPTQ&usqp=CAU")
+            if (keyboard.d)
+              pistolSkott.x += 5;
+            if (keyboard.a)
+              pistolSkott.x -= 5;
+            if (keyboard.s)
+              pistolSkott.y += 5;
+            if (keyboard.s)
+              pistolSkott.y -= 5;
+          
+          var i = 0;
+          while (i < 10){
+
+          picture(Zombie.x, Zombie.y, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa32n4xmbCZ00vQ7To5eMZLlaTWAIjI3iEUA&usqp=CAU")
            
-           rectangle(zombie.x, zombie.y, "red")
-           
-           if (zombie.x < mouse.x)
-             zombie.x += zombie.speed;
+          if (Zombie.x < mouse.x)
+            Zombie.x += Zombie.speed;
            else 
-             zombie.x -= zombie.speed;
+            Zombie.x -= Zombie.speed;
            
-           if (zombie.y < mouse.y)
-             zombie.y += zombie.speed;
+          if (Zombie.y < mouse.y)
+            Zombie.y += Zombie.speed;
            else 
-             zombie.y -= zombie.speed;
+            Zombie.y -= Zombie.speed;
            
-           if (distance(zombie, mouse) < 5)
-           {
+          if (distance(Zombie, mouse) < 5){
              alert("Game over!");
              stopUpdate();
            }
+           i += 1;
+          }
+          <!--själva spelet är klart nu steg 2-->
          }
         
         </script>
