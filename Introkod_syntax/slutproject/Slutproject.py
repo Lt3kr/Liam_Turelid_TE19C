@@ -1,40 +1,41 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.express as px
+import numpy as np
+
 
 Regional = pd.read_csv("Regional_Totals_Data.csv", encoding = "ISO-8859-1")
 Gender = pd.read_csv("Gender_Data.csv", encoding = "ISO-8859-1")
 
+dödaKön = px.pie(Gender, values="Total_Deaths", names="Gender", title="Procent av döda män och kvinnor")
+dödaKön.show()
 
+antaletFallKön = px.bar(Gender, x="Gender", y="Total_Cases", title="Alla antal fall")
+antaletFallKön.show()
 
-Män = 0
-Kvinnor = 0
+Sök_efter_stad = input("")
+Sök_efter_stad2 = input("")
+Sök_efter_stad3 = input("")
+Sök_efter_stad4 = input("")
 
-Män = Gender[Gender["Gender"] == "Male"]
-Män = Män["Total_Cases"].sum()
-
-Kvinnor = Gender[Gender["Gender"] == "Kvinnor"]
-Kvinnor = Kvinnor["Total_Cases"].sum()
-
-print(Män)
-
-totalCase = []
+allaStäder = [Sök_efter_stad, Sök_efter_stad2, Sök_efter_stad3, Sök_efter_stad4]
 
 total_Cases = []
 Cases_per_100k = []
 total_ICU_Admissions = []
 total_Deaths = []
 
-def hitta_Stad(Sök_efter_stad, Sök_efter_stad2, Sök_efter_stad3, Sök_efter_stad4):
-  Hitta1 = Regional[Regional["Region"] == Sök_efter_stad]
-  Hitta2 = Regional[Regional["Region"] == Sök_efter_stad2]
-  Hitta3 = Regional[Regional["Region"] == Sök_efter_stad3]
-  Hitta4 = Regional[Regional["Region"] == Sök_efter_stad4]
+def hitta_Stad(allaStäder):
+  Hitta1 = Regional[Regional["Region"] == allaStäder[0]]
+  Hitta2 = Regional[Regional["Region"] == allaStäder[1]]
+  Hitta3 = Regional[Regional["Region"] == allaStäder[2]]
+  Hitta4 = Regional[Regional["Region"] == allaStäder[3]]
 
-  Hitta1 = Hitta1["Total_Cases"].sum()
-  Hitta2 = Hitta2["Total_Cases"].sum()
-  Hitta3 = Hitta3["Total_Cases"].sum()
-  Hitta4 = Hitta4["Total_Cases"].sum()
+  Fall1 = Hitta1["Total_Cases"].sum()
+  Fall2 = Hitta2["Total_Cases"].sum()
+  Fall3 = Hitta3["Total_Cases"].sum()
+  Fall4 = Hitta4["Total_Cases"].sum()
 
-  totalCase = [Hitta1, Hitta2, Hitta3, Hitta4]
+  total_Cases = [Fall1, Fall2, Fall3, Fall4]
 
-print(hitta_Stad(totalCase))
+print(hitta_Stad(total_Cases))
