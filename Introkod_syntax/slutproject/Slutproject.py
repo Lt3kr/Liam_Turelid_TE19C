@@ -4,8 +4,8 @@ import plotly.express as px
 import numpy as np
 
 
-Regional = pd.read_csv("Regional_Totals_Data.csv", encoding = "ISO-8859-1")
-Gender = pd.read_csv("Gender_Data.csv", encoding = "ISO-8859-1")
+Regional = pd.read_csv("Regional_Totals_Data.csv", encoding = "UTF-8")
+Gender = pd.read_csv("Gender_Data.csv", encoding = "UTF-8")
 
 dödaKön = px.pie(Gender, values="Total_Deaths", names="Gender", title="Procent av döda män och kvinnor")
 dödaKön.show()
@@ -18,24 +18,18 @@ Sök_efter_stad2 = input("")
 Sök_efter_stad3 = input("")
 Sök_efter_stad4 = input("")
 
-allaStäder = [Sök_efter_stad, Sök_efter_stad2, Sök_efter_stad3, Sök_efter_stad4]
+total_Cases = 0
+Cases_per_100k = 0
+total_ICU_Admissions = 0
+total_Deaths = 0
 
-total_Cases = []
-Cases_per_100k = []
-total_ICU_Admissions = []
-total_Deaths = []
+städer = [Sök_efter_stad, Sök_efter_stad2, Sök_efter_stad3, Sök_efter_stad4]
 
-def hitta_Stad(allaStäder):
-  Hitta1 = Regional[Regional["Region"] == allaStäder[0]]
-  Hitta2 = Regional[Regional["Region"] == allaStäder[1]]
-  Hitta3 = Regional[Regional["Region"] == allaStäder[2]]
-  Hitta4 = Regional[Regional["Region"] == allaStäder[3]]
+def Rita_allt(städer):
+  bool_serie = Regional.Region.isin(städer)
+  # print(bool_serie)
+  Regional_filter = Regional[bool_serie]
+  print(Regional_filter)
+  px.bar(Regional_filter, x="Region", y="Total_Deaths")
 
-  Fall1 = Hitta1["Total_Cases"].sum()
-  Fall2 = Hitta2["Total_Cases"].sum()
-  Fall3 = Hitta3["Total_Cases"].sum()
-  Fall4 = Hitta4["Total_Cases"].sum()
-
-  total_Cases = [Fall1, Fall2, Fall3, Fall4]
-
-print(hitta_Stad(total_Cases))
+Rita_allt(städer)
