@@ -30,6 +30,11 @@ def Rita_allt(städer):
   # print(bool_serie)
   Regional_filter = Regional[bool_serie]
   print(Regional_filter)
-  px.bar(Regional_filter, x="Region", y="Total_Deaths")
+  TotalD_bar = px.bar(Regional_filter, x="Region", y="Total_Deaths")
+  Cases = px.pie(Regional_filter, names="Cases_per_100k_Pop", values="Cases_per_100k_Pop")
+  ICU = px.bar(Regional_filter, x="Region", y="Total_ICU_Admissions")
+  TotalD_bar.show()
+  Cases.show()
+  ICU.show()
 
 Rita_allt(städer)
