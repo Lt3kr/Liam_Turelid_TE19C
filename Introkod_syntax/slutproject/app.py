@@ -9,6 +9,10 @@ import dash
 import dash_html_components as html
 import dash_core_components as dcc
 from dash.dependencies import Input, Output
+from plotly.subplots import make_subplots
+import plotly.graph_objects as go
+
+
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
@@ -24,18 +28,16 @@ Gender = pd.read_csv("Gender_Data.csv", encoding = "UTF-8")
 
 antaletFallKön = px.bar(Gender, x="Gender", y="Total_Cases", title="Alla antal fall")
 dödaKön = px.pie(Gender, values="Total_Deaths", names="Gender", title="Procent av döda män och kvinnor")
-#städer = [Sök_efter_stad, Sök_efter_stad2, Sök_efter_stad3, Sök_efter_stad4]
-def Rita_allt():
-  bool_serie = Regional.Region.isin()
+städer = []
+def Rita_allt(städer):
+  bool_serie = Regional.Region.isin(städer)
   # print(bool_serie)
   Regional_filter = Regional[bool_serie]
   print(Regional_filter)
   TotalD_bar = px.bar(Regional_filter, x="Region", y="Total_Deaths")
   Cases = px.pie(Regional_filter, names="Cases_per_100k_Pop", values="Cases_per_100k_Pop")
   ICU = px.bar(Regional_filter, x="Region", y="Total_ICU_Admissions")
-  TotalD_bar.show()
-  Cases.show()
-  ICU.show()
+
 
 input_types = ['text', 'text', 'text', 'text']
 
@@ -53,26 +55,22 @@ app.layout = html.Div(children=[
         dcc.Input(
         id="stad_1",
         type='text',
-        list='stadVal',
-        debounce=True,
+        list='stadVal'
         ),
         dcc.Input(
         id="stad_2",
         type='text',
-        list='stadVal',
-        debounce=True
+        list='stadVal'
         ),
         dcc.Input(
         id="stad_3",
         type='text',
-        list='stadVal',
-        debounce=True
+        list='stadVal'
         ),
         dcc.Input(
         id="stad_4",
         type='text',
-        list='stadVal',
-        debounce=True
+        list='stadVal'
         )
     ]),
 
@@ -97,16 +95,25 @@ app.layout = html.Div(children=[
 
 @app.callback(
     Output("könsGraf","dödKön"),
-    [Input(["stad_1", "stad_2", "stad_3", "stad_4"])]
+    [Input("stad_1", "value")],
+    [Input("stad_2", "value")],
+    [Input("stad_3", "value")],
+    [Input("stad_4", "value")]
 )
 
+# def update_figure(stad_1, stad_2, stad_3, stad_4):
+    # Välja = [stad_1, stad_2, stad_3, stad_4]
+    # bool_serie = Regional.Region.isin(Välja)
+    # print(bool_serie)
+    # Regional_filter = Regional[bool_serie]
+    # TotalD_bar = px.bar(Regional_filter, x="Region", y="Total_Deaths")
+    # fig = TotalD_bar
+    # return fig
 
+def update_figure(stad_1, stad_2, stad_3, stad_4):
+    fig = make_subplots(rows=1, cols=3)
 
-def update_figure(value):
-    fig = Rita_allt(value)
-    fig.update_layout(transition_duration=500)
-    return fig
-
+    fig.add_trace(go.Bar(y=[], x=[stad_1, stad_2, stad_3, stad_4]))
 
 if __name__=="__main__":
     app.run_server(debug=True)
