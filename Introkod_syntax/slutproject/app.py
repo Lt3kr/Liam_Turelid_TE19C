@@ -37,6 +37,8 @@ def Rita_allt():
   Cases.show()
   ICU.show()
 
+input_types = ['text', 'text', 'text', 'text']
+
 app.layout = html.Div(children=[
     html.H1(children="Welcome to Liams graphs",
     style={
@@ -47,6 +49,39 @@ app.layout = html.Div(children=[
     html.Div(children='''
     Skriv in i sökfälten vilka städer du vill jämföra glöm inte att inte stava fel och med stora bokstäver
     '''),
+    html.Div([   #Detta är inputfältet som man ska skriva in de städer som man vill ha
+        dcc.Input(
+        id="stad_1",
+        type='text',
+        list='stadVal',
+        debounce=True,
+        ),
+        dcc.Input(
+        id="stad_2",
+        type='text',
+        list='stadVal',
+        debounce=True
+        ),
+        dcc.Input(
+        id="stad_3",
+        type='text',
+        list='stadVal',
+        debounce=True
+        ),
+        dcc.Input(
+        id="stad_4",
+        type='text',
+        list='stadVal',
+        debounce=True
+        )
+    ]),
+
+    html.Datalist(id='stadVal', children=[ #Skapar en datalist som innehåller förbestämda val som man kan klicka in omedelbart
+        html.Option(value='Blekinge'),
+        html.Option(value='Dalarna'),
+        html.Option(value='Gotland'),
+        html.Option(value='Gävleborg')
+    ]),
 
     dcc.Graph(
         id= "könsGraf",
@@ -58,36 +93,14 @@ app.layout = html.Div(children=[
         figure = dödaKön
     ),
 
-    dcc.Input(
-        id="stad_1".format(x),
-        type=x,
-        PlaceHolder="stad 1".format(x),
-        debounce=True
-    ),
-    dcc.Input(
-        id="stad_2".format(x),
-        type=x,
-        placeholder="stad_2".format(x),
-        debounce=True
-    ),
-
-    dcc.Input(
-        id="stad_3".format(x),
-        type=x,
-        PlaceHolder="stad_3".format(x),
-        debounce=True
-    ),
-
-    dcc.Graph(
-        id="StadGraf",
-    ),
-
 ])
 
 @app.callback(
-    Output("könsGraf","StadGraf","dödKön"),
-    [Input(["stad_1".format(X), "stad_2".format(X), "stad_3".format(X), "stad_4".format(X)], value)]
+    Output("könsGraf","dödKön"),
+    [Input(["stad_1", "stad_2", "stad_3", "stad_4"])]
 )
+
+
 
 def update_figure(value):
     fig = Rita_allt(value)
