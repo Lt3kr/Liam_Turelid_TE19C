@@ -111,6 +111,9 @@ app.layout = html.Div(children=[
     # return fig
 
 def update_figure(stad_1, stad_2, stad_3, stad_4):
+
+    df = Regional[(Regional["Region"].isin([stad_1,stad_2,stad_3,stad_4]))]
+
     fig = make_subplots(rows=1, cols=3)
 
     fig.add_trace(go.Bar(y=[], x=[stad_1, stad_2, stad_3, stad_4]))
