@@ -127,11 +127,9 @@ app.layout = html.Div(children=[
 
 def update_figure(stad_1, stad_2, stad_3, stad_4, JämförVal): # gör en funktion för att det inte ska vara statiska grafer
 
-    städer = [stad_1,stad_2,stad_3,stad_4] # gör en array för enkelhetens skull
-
     dataframe = Regional[(Regional["Region"].isin([stad_1,stad_2,stad_3,stad_4]))] # skapar en ny dataframe, gör detta av den gamla och använder .isin funktionen för att hitta de val användaren vill ha
 
-    fig = {'data': [dict(x=städer , y = dataframe[JämförVal] ,type="bar")], # skapar en responsiv graf baserad på inputsen av både städer och vad man vill jämföra i form av JämförVal
+    fig = {'data': [dict(x=dataframe["Region"] , y = dataframe[JämförVal] ,type="bar")], # skapar en responsiv graf baserad på inputsen av både städer och vad man vill jämföra i form av JämförVal
 
         'layout':dict(title= "Resultaten: ")}
     return fig
@@ -147,11 +145,9 @@ def update_figure(stad_1, stad_2, stad_3, stad_4, JämförVal): # gör en funkti
 
 def update_figure2(stad_1, stad_2, stad_3, stad_4, JämförVal): # gör en ny funktion för min pie chart 
 
-    städer = [stad_1,stad_2,stad_3,stad_4] # lägger all städer i en array för atta användas senare i min dataframe och i min graf
-
     dataframe = Regional[(Regional["Region"].isin([stad_1,stad_2,stad_3,stad_4]))] # Gör ännu en gång en ny dataframe för enkelhetens skull
 
-    fig = go.Figure(data=[go.Pie(labels=städer, values=dataframe[JämförVal])]) # Gör en pie chart som tar in värdena städer som labels och min datatframe med val av JämförVal för values
+    fig = go.Figure(data=[go.Pie(labels=dataframe["Region"], values=dataframe[JämförVal])]) # Gör en pie chart som tar in värdena städer som labels och min datatframe med val av JämförVal för values
 
     return fig
 
