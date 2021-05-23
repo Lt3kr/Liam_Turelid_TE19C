@@ -21,8 +21,8 @@ app = dash.Dash(__name__) # starten på själva servern
 Regional = pd.read_csv("Regional_Totals_Data.csv", encoding = "UTF-8") # läser in Regional_Totals_Data.csv filen så datorn kan använda informationen
 Gender = pd.read_csv("Gender_Data.csv", encoding = "UTF-8") # läser in Gender_Data.csv filen så datorn kan använda informationen
 
-antaletFallKön = px.bar(Gender, x="Gender", y="Total_Cases", title="Alla antal fall") # detta är själva antaletFallKön statiska grafen som jag kallar på i layouten
-dödaKön = px.pie(Gender, values="Total_Deaths", names="Gender", title="Procent av döda män och kvinnor") # detta är den statiska dödakön grafen jag kallar på i layouten
+antaletFallKön = px.bar(Gender, x="Gender", y="Total_Cases", title="Alla antal fall män och kvinnor: ") # detta är själva antaletFallKön statiska grafen som jag kallar på i layouten
+dödaKön = px.pie(Gender, values="Total_Deaths", names="Gender", title="Procent av döda män och kvinnor: ") # detta är den statiska dödakön grafen jag kallar på i layouten
 
 app.layout = html.Div(children=[
     html.H1(children="Welcome to Liams graphs",
