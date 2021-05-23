@@ -36,9 +36,9 @@ app.layout = html.Div(children=[
     '''), # detta är endast en text div
     html.Div([   #Detta är inputfältet som man ska skriva in de städer som man vill ha att jämföra med
         dcc.Input(
-        id="stad_1",
-        type='text',
-        list='stadVal'
+        id="stad_1", # själva id:et så informationen kan hämtas
+        type='text', # typen av fält
+        list='stadVal' # vilken dropdown lista jag vill använda för enkelhetens skull
         ),
         dcc.Input(
         id="stad_2",
@@ -57,7 +57,7 @@ app.layout = html.Div(children=[
         )
     ]),
 
-    html.Div(children='''Vad vill du undersöka?'''),
+    html.Div(children='''Vad vill du undersöka?'''), # endast en vanlig text div
 
     dcc.Input( # detta är en text input för att man ska välja vad man vill jämföra
         id="JämförVal",
